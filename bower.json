@@ -1,0 +1,22 @@
+{
+  "name": "frontend-nanodegree-health-tracker",
+  "description": "Track calories by foods added",
+  "main": "index.js",
+  "authors": [
+    "James Peterson"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}
