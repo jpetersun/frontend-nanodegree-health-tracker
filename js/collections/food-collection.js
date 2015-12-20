@@ -1,6 +1,7 @@
 var app = app || {};
 
 var FoodCollection = Backbone.Collection.extend({
+	model: app.FoodItem,
 
 	initialize: function(models, options) {
 		console.log('makin collection of food')
