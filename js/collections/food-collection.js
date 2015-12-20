@@ -1,8 +1,9 @@
 var app = app || {};
 
-app.FoodCollection = Backbone.Collection.extend({
-	model: app.FoodItem,
+var FoodCollection = Backbone.Collection.extend({
+
 	initialize: function(models, options) {
+		console.log('makin collection of food')
 		this.query = options.query;
 	},
 
@@ -13,12 +14,12 @@ app.FoodCollection = Backbone.Collection.extend({
 		return "https://api.nutritionix.com/v1_1/search/" + this.query + "?fields=item_name%2Cnf_calories" + "&appId=" + appId + "&appKey=" + appKey;
 	},
 
-	parse: function(data) {
-		console.log(data.hits[0]);
-		return data.hits;
+	parse: function(response) {
+		console.log(response.hits[0]);
+		return response.hits;
 	}
 });
 
-var cheeseBurger = new app.FoodCollection([], {query: 'cheese burger'});
+var cheeseBurger = new FoodCollection([], {query: 'cheese burger'});
 cheeseBurger.fetch();
 
