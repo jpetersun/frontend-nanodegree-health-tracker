@@ -34,7 +34,7 @@ app.FoodListView = Backbone.View.extend({
 
 
 		_.bindAll(this, 'render');
-		if (e.which === ENTER_KEY) {
+		if (e.which === ENTER_KEY && $('#searchFood').val().trim()) {
 			console.log('getting food');
 			var food_name = $('#searchFood').val();
 
