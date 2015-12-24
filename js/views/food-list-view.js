@@ -1,6 +1,6 @@
 var app = app || {};
 
-app.FoodListView = Backbone.View.extend({
+app.FoodAppView = Backbone.View.extend({
 
 	el: '#searchContainer',
 
@@ -46,21 +46,26 @@ app.FoodListView = Backbone.View.extend({
 					self.render();
 				}
 			});
-		}
+		};
 
 
 	},
 
-	template: _.template($('#foodTemplate').html()),
+	// template: _.template($('#foodTemplate').html()),
+	// template: '<ul id="food-list"></ul>',
 
 	render: function() {
 
-		// $('#itemContainer').html('');
+		console.log(this.collection.models);
 
-		//console.log($(this.el).html());
+		var totalView;
 
-		$('#foodContainer').html(this.template({ food: this.collection.toJSON() }));
-		//$('#foodContainer'.el).html(this.template({ food: this.collection.toJSON() }));
+		for (var x in this.collection.models) {
+			totalView = new app.FoodTotalView({model: this.collection.models[x]});
+
+			this.$el.find('#food-list').append(totalView.render().el);
+		}
+		//$('#foodContainer').html(this.template({ food: this.collection.toJSON() }));
 	}
 });
 
@@ -69,4 +74,4 @@ app.FoodListView = Backbone.View.extend({
 // });
 
 var ENTER_KEY = 13;
-var foodApp = new app.FoodListView();
+var foodApp = new app.FoodAppView();
