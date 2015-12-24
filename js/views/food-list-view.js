@@ -1,77 +1,38 @@
 var app = app || {};
 
-app.FoodAppView = Backbone.View.extend({
+app.FoodListView = Backbone.View.extend({
 
-	el: '#searchContainer',
+	//el: '#foodContainer',
+	tagName: 'li',
+
+	// template: '<ul id="food-list"></ul>',
+
 
 	events: {
-		'keypress #searchFood' : 'getFood'
+		'click' : 'getModel'
 	},
 
-	initialize: function() {
-
-		//this.collection.on("add", this.render, this);
-
-		console.log('running initialize');
-		// this.listenTo(this.collection, 'change', this.render);
-		// this.listenTo(this.collection, 'destroy', this.remove);
-
-		// var title = this.$el.find('input').val();
-
-		// _.bindAll(this, 'render');
-
-		// this.collection = new FoodCollection({name: 'grill'});
-
-		// var self = this;
-		// this.collection.fetch({
-		// 	success: function() {
-		// 		self.render();
-		// 	}
-		// });
-	},
-
-	getFood: function(e) {
-
-
-		_.bindAll(this, 'render');
-		if (e.which === ENTER_KEY && $('#searchFood').val().trim()) {
-			console.log('getting food');
-			var food_name = $('#searchFood').val();
-
-			this.collection = new FoodCollection({name: food_name});
-
-			var self = this;
-			this.collection.fetch({
-				success: function() {
-					self.render();
-				}
-			});
-		};
-
+	initialize: function(options) {
+		console.log('food total view initialized');
+		this.model = options.model;
 
 	},
 
-	// template: _.template($('#foodTemplate').html()),
-	// template: '<ul id="food-list"></ul>',
+	getModel: function() {
+		console.log(this.model);
+		var totalView;
+		totalView = new app.FoodTotalView({model: this.model});
+		// this.$el.find('#total-list').append(totalView.render().el);
+		$('#total-list').append(totalView.render().el);
+
+	},
 
 	render: function() {
 
-		console.log(this.collection.models);
-
-		var totalView;
-
-		for (var x in this.collection.models) {
-			totalView = new app.FoodTotalView({model: this.collection.models[x]});
-
-			this.$el.find('#food-list').append(totalView.render().el);
-		}
-		//$('#foodContainer').html(this.template({ food: this.collection.toJSON() }));
+		this.$el.html(this.model.attributes.fields.item_name + " | calories: " + this.model.attributes.fields.nf_calories);
+		return this;
 	}
+
 });
 
-// var foodApp = new app.FoodListView ({
-// 	el: $('#searchContainer')
-// });
-
-var ENTER_KEY = 13;
-var foodApp = new app.FoodAppView();
+//var foodTotal = new app.FoodTotalView();
