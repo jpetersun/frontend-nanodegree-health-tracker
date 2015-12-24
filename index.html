@@ -8,10 +8,13 @@
 		<link rel="stylesheet" href='css/main.css'>
 	</head>
 	<body>
-<!-- 		<div class="container">
-			<h1>Calories</h1>
-			<input type="text" placeholder="How many calories have you consumed?">
-		</div> -->
+
+			<div id="searchContainer">
+				<h1>Calories</h1>
+				<input id="searchFood" type="text" placeholder="How many calories have you consumed?">
+				<button class="searchBtn">Search Food</button>
+
+
 		<!--<script type="text/template" id="foodTemplate">
 			<%_.each(food, function (item) { %>
 				<div class="food">
@@ -20,15 +23,16 @@
 					</div>
 					<% }); %>
 		</script>-->
-		<script type="text/template" id="foodTemplate">
-		<% _.each(food, function (item) { %>
-			<div class="food">
-				<ul>
-					<li><%= item.fields.item_name %> | calories: <%= item.fields.nf_calories %></li>
-				</ul>
-			</div>
-			<% }); %>
-		</script>
+		<!-- <div id="itemContainer"> -->
+		</div>
+		<div id="foodContainer"></div>
+			<script type="text/template" id="foodTemplate">
+			<% _.each(food, function (item) { %>
+						<li><%= item.fields.item_name %> | calories: <%= item.fields.nf_calories %></li>
+				<% }); %>
+			</script>
+
+
 
 		<script src="js/lib/underscore-min.js"></script>
 		<script src="js/lib/jquery-1.11.3.min.js"></script>
