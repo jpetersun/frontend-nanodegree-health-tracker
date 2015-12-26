@@ -21,6 +21,15 @@ var FoodCollection = Backbone.Collection.extend({
 	}
 });
 
+var SelectedFoodCollection = Backbone.Collection.extend({
+	model: app.FoodItem,
+
+	initialize: function() {
+		console.log('selected food collection initialized');
+	},
+});
+
+app.selectedFoods = new SelectedFoodCollection();
 //var Food = new FoodCollection({name: ''});
 //var bread = new FoodCollection({query: 'bread'});
 //Food.fetch()
