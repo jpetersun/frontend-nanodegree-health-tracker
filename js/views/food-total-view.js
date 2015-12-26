@@ -5,11 +5,10 @@ app.FoodTotalView = Backbone.View.extend({
 	el: '#total-list',
 
 	tagName: 'li',
-	// className: 'total-listed-item',
 
-	events: {
-		'click' : 'getItem'
-	},
+	// events: {
+	// 	'click' : 'clear'
+	// },
 
 
 	initialize: function(options) {
@@ -18,21 +17,17 @@ app.FoodTotalView = Backbone.View.extend({
 		console.log('total view initialized');
 
 		this.collection = options.collection;
-		this.model = options.collection.models;
+		// this.model = options.collection.models;
 
 
 		this.listenTo(this.collection, 'add', this.render);
 		// this.model = options.model;
-		// this.listenTo(this.model, 'destroy', this.remove);
-	},
-
-	getItem: function() {
-		console.log(this.model);
+		// this.listenTo(this.collection, 'reset', this.addAll);
 	},
 
 	render: function() {
 		console.log('adding selected items to screen');
-		console.log(this.collection);
+		// console.log(this.collection);
 
 		// var listView;
 
@@ -45,20 +40,31 @@ app.FoodTotalView = Backbone.View.extend({
 
 		var selectedFoodItems;
 		for (var x in this.collection.models) {
-			selectedFoodItems = new app.FoodListView({model: this.collection.models[x]});
+			selectedFoodItems = new app.FoodSelectedItemView({model: this.collection.models[x]});
 
 			$('#total-list').append(selectedFoodItems.render().el);
 		}
 		// $('#total-list').html(this.collection.models.attributes.fields.item_name + " | calories: " + this.collection.models.attributes.fields.nf_calories);
 
-		// return this;
+		return this;
 	},
 
-	// addOne: function()
+	// addOne: function() {
 
-	clear: function() {
-		this.collection.remove(this.model);
-	}
+	// },
+
+	// addAll: function() {
+
+	// },
+
+
+	// remove: function() {
+	// 	this.render();
+	// },
+
+	// clear: function() {
+	// 	this.collection.remove(this.model);
+	// }
 
 });
 
