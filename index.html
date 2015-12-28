@@ -14,7 +14,9 @@
 				<input id="searchFood" type="text" placeholder="How many calories have you consumed?">
 				<button class="searchBtn">Search Food</button>
 				<ul id="food-list"></ul>
+				<p id="total-calories">Total Calories: <span>0</span></p>
 				<ul id="total-list"></ul>
+
 
 		<!--<script type="text/template" id="foodTemplate">
 			<%_.each(food, function (item) { %>
@@ -39,11 +41,17 @@
 		<script src="js/lib/jquery-1.11.3.min.js"></script>
 		<script src="js/lib/backbone-min.js"></script>
 		<script src="http://localhost:9090/livereload.js"></script>
+		<!--<script src="js/lib/backbone.localStorage-min.js"></script>-->
+				<!-- Firebase -->
+		<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+		<!-- BackboneFire -->
+		<script src="https://cdn.firebase.com/libs/backbonefire/0.5.1/backbonefire.min.js"></script>
 		<script src="js/models/food-model.js"></script>
 		<script src="js/collections/food-collection.js"></script>
 		<script src="js/views/food-app-view.js"></script>
 		<script src="js/views/food-list-view.js"></script>
 		<script src="js/views/food-total-view.js"></script>
+		<script src="js/views/food-selected-item-view.js"></script>
 		<script src="js/routers/food-router.js"></script>
 	</body>
 </html>
