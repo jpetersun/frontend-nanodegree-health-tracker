@@ -21,12 +21,15 @@ var FoodCollection = Backbone.Collection.extend({
 	}
 });
 
-var SelectedFoodCollection = Backbone.Collection.extend({
+var SelectedFoodCollection = Backbone.Firebase.Collection.extend({
 	model: app.FoodItem,
 
-	initialize: function() {
-		console.log('selected food collection initialized');
-	},
+	// localStorage: new Backbone.LocalStorage("items-backbone"),
+	url: "https://radiant-torch-7867.firebaseio.com"
+
+	// initialize: function() {
+	// 	console.log('selected food collection initialized');
+	// },
 });
 
 app.selectedFoods = new SelectedFoodCollection();
