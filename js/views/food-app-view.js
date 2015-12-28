@@ -11,7 +11,7 @@ app.FoodAppView = Backbone.View.extend({
 	initialize: function() {
 
 		//this.collection.on("add", this.render, this);
-		this.listenTo(app.selectedFoods, 'add destroy', this.renderCalories);
+		this.listenTo(app.selectedFoods, 'add remove', this.renderCalories);
 		console.log('running app initialize');
 		// this.listenTo(this.collection, 'change', this.render);
 		// this.listenTo(this.collection, 'destroy', this.remove);
@@ -28,6 +28,7 @@ app.FoodAppView = Backbone.View.extend({
 		// 		self.render();
 		// 	}
 		// });
+		// app.selectedFoods.fetch({success: console.log('fetched selected foods')});
 	},
 
 	getFood: function(e) {
@@ -56,11 +57,12 @@ app.FoodAppView = Backbone.View.extend({
 	// template: '<ul id="food-list"></ul>',
 
 	renderCalories: function() {
+		console.log('updating calories');
 		var total = 0;
 
 
 		_.each(app.selectedFoods.models, function (item) {
-			total += item.attributes.fields.nf_calories;
+			total += item.attributes.calories;
 		});
 
 		$('#total-calories span').text(total);
