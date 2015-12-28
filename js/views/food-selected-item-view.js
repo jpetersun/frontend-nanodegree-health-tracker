@@ -14,19 +14,19 @@ app.FoodSelectedItemView = Backbone.View.extend({
 	initialize: function(options) {
 
 		this.model = options.model;
-		this.listenTo(this.model, 'destroy', this.remove);
+		this.listenTo(this.model ,'destroy', this.remove);
 	},
 
 	render: function() {
 
-		this.$el.html(this.model.attributes.fields.item_name + " | calories: " + this.model.attributes.fields.nf_calories);
+		this.$el.html(this.model.attributes.title + " | calories: " + this.model.attributes.calories);
 		return this;
 	},
 
 	clear: function() {
 		console.log('destroying model');
 		this.model.destroy();
-		console.log('Total selected items: ' + app.selectedFoods.length);
+		//console.log('Total selected items: ' + app.selectedFoods.length);
 	}
 
 });
