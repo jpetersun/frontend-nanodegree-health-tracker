@@ -28,14 +28,15 @@ app.FoodListView = Backbone.View.extend({
 	// },
 
 	getModel: function() {
-		//console.log(this.model);
 		//var totalView;
 		var selectedItem = this.model;
 		//totalView = new app.FoodTotalView({model: this.model});
 		// this.$el.find('#total-list').append(totalView.render().el);
 		//$('#total-list').append(totalView.render().el);
-		app.selectedFoods.add(selectedItem);
-		console.log(app.selectedFoods.length);
+		app.selectedFoods.add({
+			title: this.model.attributes.fields.item_name,
+			calories: this.model.attributes.fields.nf_calories
+		});
 	},
 
 	render: function() {
