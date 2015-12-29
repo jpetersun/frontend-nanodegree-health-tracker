@@ -4,6 +4,7 @@
 
 .navbar {
 	min-height: 25px;
+	background: url("/image_src/food.png");
 }
 
 #food-list li {
@@ -41,11 +42,11 @@ p {
 
 .user-input {
 	/*background: url("/image_src/texture-background.jpg");*/
-	background: url("/image_src/food.png");
+	background: url("/image_src/restaurant.png");
 
 	height: 110px;
 	/*background-size: 100% auto;*/
-	background-size: contain;
+	/*background-size: contain;*/
 /*	position: fixed;
 *//*	top: 10px;
 	left: 20px;*/
@@ -54,6 +55,15 @@ p {
 #searchFood {
 	margin-left: 15px;
 	margin-right: 10px;
+}
+
+body {
+	background: url("/image_src/shattered.png");
+	background-size: contain;
+}
+
+ul {
+	font-size: 16px;
 }
 
 
