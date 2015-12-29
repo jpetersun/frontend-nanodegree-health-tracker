@@ -5,7 +5,9 @@
 		<title>Health Tracker</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href='css/main.css'>
+
 	</head>
 	<body>
 		<div class="container" id="search-container">
@@ -13,17 +15,19 @@
  -->			<div class="user-input">
 					<h1>Calorie Tracker</h1>
 					<input id="searchFood" type="text" autocomplete="off" placeholder="What did you eat?">
-					<button id="search-button" class="btn-success">SEARCH</button>
+					<button id="search-button">Search</button>
 				</div>
-				<!-- <h4>Search Results</h4> -->
 
 				<ul id="food-list"></ul>
 				<hr>
 				<h4>Consumed:</h4>
 				<ul id="total-list"></ul>
+				<hr class="total-list-hr">
+
 				<nav class="navbar text-center navbar-default navbar-fixed-bottom">
 					<p id="total-calories">Total Calories: <span>0</span></p>
 				</nav>
+
 
 		</div>
 		<div id="foodContainer"></div>
