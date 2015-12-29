@@ -2,10 +2,10 @@ var app = app || {};
 
 app.FoodAppView = Backbone.View.extend({
 
-	el: '#searchContainer',
+	el: '#search-container',
 
 	events: {
-		'keypress #searchFood' : 'getFood'
+		'click #search-button' : 'getFood'
 	},
 
 	initialize: function() {
@@ -36,7 +36,7 @@ app.FoodAppView = Backbone.View.extend({
 		$("#food-list").html('');
 
 		_.bindAll(this, 'render');
-		if (e.which === ENTER_KEY && $('#searchFood').val().trim()) {
+		// if (e.which === ENTER_KEY && $('#searchFood').val().trim()) {
 			console.log('getting food');
 			var food_name = $('#searchFood').val();
 
@@ -48,7 +48,7 @@ app.FoodAppView = Backbone.View.extend({
 					self.render();
 				}
 			});
-		};
+		// };
 
 
 	},
