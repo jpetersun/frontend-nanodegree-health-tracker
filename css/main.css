@@ -27,6 +27,8 @@
 }
 h1 {
 	text-align: center;
+	padding-top: 5px;
+	color: #eee;
 }
 
 hr {
@@ -36,6 +38,24 @@ hr {
 p {
 	font-weight: bold;
 }
+
+.user-input {
+	/*background: url("/image_src/texture-background.jpg");*/
+	background: url("/image_src/food.png");
+
+	height: 110px;
+	/*background-size: 100% auto;*/
+	background-size: contain;
+/*	position: fixed;
+*//*	top: 10px;
+	left: 20px;*/
+}
+
+#searchFood {
+	margin-left: 15px;
+	margin-right: 10px;
+}
+
 
 /*ul {
 	margin-top: 10px;
