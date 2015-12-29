@@ -7,9 +7,6 @@ app.FoodListView = Backbone.View.extend({
 
 	className: 'search-results',
 
-	// template: '<ul id="food-list"></ul>',
-
-
 	events: {
 		'click' : 'getModel',
 		// 'click .selected-items'
@@ -43,7 +40,7 @@ app.FoodListView = Backbone.View.extend({
 
 	render: function() {
 
-		this.$el.html(this.model.attributes.fields.item_name + " | calories: " + this.model.attributes.fields.nf_calories);
+		this.$el.html("<strong>" + this.model.attributes.fields.item_name + "</strong>" + " | calories: " + this.model.attributes.fields.nf_calories);
 		return this;
 	}
 
