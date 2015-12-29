@@ -1,3 +1,51 @@
-input {
-	width: 280px;
+.form-control {
+	width: 70%;
 }
+
+.navbar {
+	min-height: 25px;
+}
+
+#food-list li {
+	list-style-image: url('/icons/add139.png');
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#total-list li {
+	list-style-image: url('/icons/minus87.png');
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#total-list {
+	margin-bottom: 29px;
+}
+
+#food-list {
+	margin-top: 10px;
+}
+h1 {
+	text-align: center;
+}
+
+hr {
+	margin-top: 10px;
+}
+
+p {
+	font-weight: bold;
+}
+
+/*ul {
+	margin-top: 10px;
+	margin-bottom: 25px;
+}*/
+
+/*#total-calories {
+  text-align: center;
+  width: 131px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: '';
+}*/
