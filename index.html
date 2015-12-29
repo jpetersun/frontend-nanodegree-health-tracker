@@ -8,41 +8,33 @@
 		<link rel="stylesheet" href='css/main.css'>
 	</head>
 	<body>
-
-			<div id="searchContainer">
-				<h1>Calories</h1>
-				<input id="searchFood" type="text" placeholder="How many calories have you consumed?">
-				<button class="searchBtn">Search Food</button>
+		<div class="container" id="search-container">
+				<h1>Calorie Tracker</h1>
+				<input id="searchFood" type="text" autocomplete="off" placeholder="What did you eat?">
+				<button id="search-button" class="btn-success">Search Food</button>
+				<!-- <h4>Search Results</h4> -->
 				<ul id="food-list"></ul>
-				<p id="total-calories">Total Calories: <span>0</span></p>
+				<hr>
+				<h4>Consumed:</h4>
 				<ul id="total-list"></ul>
+				<nav class="navbar text-center navbar-default navbar-fixed-bottom">
+					<p id="total-calories">Total Calories: <span>0</span></p>
+				</nav>
 
-
-		<!--<script type="text/template" id="foodTemplate">
-			<%_.each(food, function (item) { %>
-				<div class="food">
-					<p><%= item.fields.item_name %></p>
-					<p><%= item.fields.nf_calories %></p>
-					</div>
-					<% }); %>
-		</script>-->
-		<!-- <div id="itemContainer"> -->
 		</div>
 		<div id="foodContainer"></div>
-			<script type="text/template" id="foodTemplate">
+
+			<!--<script type="text/template" id="foodTemplate">
 			<% _.each(food, function (item) { %>
 						<li><%= item.fields.item_name %> | calories: <%= item.fields.nf_calories %></li>
 				<% }); %>
-			</script>
-
-
+			</script>-->
 
 		<script src="js/lib/underscore-min.js"></script>
 		<script src="js/lib/jquery-1.11.3.min.js"></script>
 		<script src="js/lib/backbone-min.js"></script>
 		<script src="http://localhost:9090/livereload.js"></script>
-		<!--<script src="js/lib/backbone.localStorage-min.js"></script>-->
-				<!-- Firebase -->
+		<!-- Firebase -->
 		<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
 		<!-- BackboneFire -->
 		<script src="https://cdn.firebase.com/libs/backbonefire/0.5.1/backbonefire.min.js"></script>
