@@ -29,12 +29,17 @@
 h1 {
 	text-align: center;
 	padding-top: 5px;
-	color: #eee;
+	color: #fff;
 }
 
 hr {
 	margin-top: 10px;
 }
+
+.total-list-hr {
+	margin-bottom: 50px;
+}
+
 
 p {
 	font-weight: bold;
@@ -54,17 +59,25 @@ p {
 
 #searchFood {
 	margin-left: 15px;
-	margin-right: 10px;
+	border: 0px;
+	padding: 3px;
 }
 
+#search-button {
+	margin-left: -5px;
+	border: 0px;
+	padding: 3px 5px;
+}
 body {
 	background: url("/image_src/shattered.png");
 	background-size: contain;
+	font-family: 'Open Sans', sans-serif;
 }
 
 ul {
 	font-size: 16px;
 }
+
 
 
 /*ul {
