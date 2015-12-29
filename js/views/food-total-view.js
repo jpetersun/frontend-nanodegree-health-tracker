@@ -19,7 +19,6 @@ app.FoodTotalView = Backbone.View.extend({
 		this.collection = options.collection;
 		// this.model = options.collection.models;
 
-
 		this.listenTo(this.collection, 'add', this.render);
 		// this.model = options.model;
 		// this.listenTo(this.collection, 'reset', this.addAll);
