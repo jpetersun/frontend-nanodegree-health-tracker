@@ -90,6 +90,10 @@ ul {
 	font-size: 16px;
 }
 
+#loading-icon {
+	display: block;
+	margin: auto;
+}
 /*ul {
 	margin-top: 10px;
 	margin-bottom: 25px;
