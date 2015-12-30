@@ -17,7 +17,7 @@
 					<input id="searchFood" type="text" autocomplete="off" placeholder="What did you eat?">
 					<button id="search-button">Search</button>
 				</div>
-
+				<img src="/image_src/ajax-loader.gif" id="loading-icon" style="display:none">
 				<ul id="food-list"></ul>
 				<hr>
 				<h4>Consumed:</h4>
@@ -53,5 +53,13 @@
 		<script src="js/views/food-total-view.js"></script>
 		<script src="js/views/food-selected-item-view.js"></script>
 		<script src="js/routers/food-router.js"></script>
+		<script>
+		$(document).ajaxSend(function(event, request, settings) {
+			$('#loading-icon').show();
+		});
+		$(document).ajaxComplete(function(event, request, settings) {
+			$('#loading-icon').hide();
+		});
+		</script>
 	</body>
 </html>
