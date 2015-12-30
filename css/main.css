@@ -1,17 +1,35 @@
-.form-control {
-	width: 70%;
+/*General*/
+body {
+	background: url("/image_src/shattered.png");
+	background-size: contain;
+	font-family: 'Open Sans', sans-serif;
 }
 
-.navbar {
-	min-height: 25px;
-	background: url("/image_src/food.png");
+/*Header*/
+h1 {
+	text-align: center;
 	padding-top: 5px;
+	color: #fff;
+}
+
+/*Paragraph*/
+p {
+	font-weight: bold;
+}
+
+/*Unordered Lists*/
+ul {
+	font-size: 16px;
 }
 
 #food-list li {
 	list-style-image: url('/icons/add139.png');
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+#food-list {
+	margin-top: 10px;
 }
 
 #total-list li {
@@ -24,15 +42,14 @@
 	margin-bottom: 29px;
 }
 
-#food-list {
-	margin-top: 10px;
-}
-h1 {
-	text-align: center;
+/*Navigation Bar Bottom*/
+.navbar {
+	min-height: 25px;
+	background: url("/image_src/food.png");
 	padding-top: 5px;
-	color: #fff;
 }
 
+/*Horizontal Ruler*/
 hr {
 	margin-top: 10px;
 }
@@ -41,21 +58,10 @@ hr {
 	margin-bottom: 50px;
 }
 
-
-p {
-	font-weight: bold;
-}
-
+/*User input section*/
 .user-input {
-	/*background: url("/image_src/texture-background.jpg");*/
 	background: url("/image_src/restaurant.png");
-
 	height: 110px;
-	/*background-size: 100% auto;*/
-	/*background-size: contain;*/
-/*	position: fixed;
-*//*	top: 10px;
-	left: 20px;*/
 }
 
 input#searchFood:focus {
@@ -80,29 +86,8 @@ input#searchFood:focus {
 	outline: none;
 }
 
-body {
-	background: url("/image_src/shattered.png");
-	background-size: contain;
-	font-family: 'Open Sans', sans-serif;
-}
-
-ul {
-	font-size: 16px;
-}
-
+/*Loading Icon*/
 #loading-icon {
 	display: block;
 	margin: auto;
 }
-/*ul {
-	margin-top: 10px;
-	margin-bottom: 25px;
-}*/
-
-/*#total-calories {
-  text-align: center;
-  width: 131px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: '';
-}*/
