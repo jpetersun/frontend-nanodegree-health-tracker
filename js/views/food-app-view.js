@@ -2,92 +2,63 @@ var app = app || {};
 
 app.FoodAppView = Backbone.View.extend({
 
-	el: '#search-container',
+    el: '#search-container',
 
-	events: {
-		'click #search-button' : 'getFood'
-	},
+    events: {
+        'click #search-button': 'getFood'
+    },
 
-	initialize: function() {
+    initialize: function() {
 
-		//this.collection.on("add", this.render, this);
-		this.listenTo(app.selectedFoods, 'add remove', this.renderCalories);
-		console.log('running app initialize');
-		// this.listenTo(this.collection, 'change', this.render);
-		// this.listenTo(this.collection, 'destroy', this.remove);
+        this.listenTo(app.selectedFoods, 'add remove', this.renderCalories);
+        console.log('running app initialize');
+    },
 
-		// var title = this.$el.find('input').val();
+    getFood: function(e) {
 
-		// _.bindAll(this, 'render');
+        $("#food-list").html('');
 
-		// this.collection = new FoodCollection({name: 'grill'});
+        _.bindAll(this, 'render');
+        console.log('getting food');
+        var food_name = $('#searchFood').val();
 
-		// var self = this;
-		// this.collection.fetch({
-		// 	success: function() {
-		// 		self.render();
-		// 	}
-		// });
-		// app.selectedFoods.fetch({success: console.log('fetched selected foods')});
-	},
+        this.collection = new FoodCollection({
+            name: food_name
+        });
 
-	getFood: function(e) {
+        var self = this;
+        this.collection.fetch({
+            success: function() {
+                self.render();
+            }
+        });
+    },
 
-		$("#food-list").html('');
+    renderCalories: function() {
 
-		_.bindAll(this, 'render');
-		// if (e.which === ENTER_KEY && $('#searchFood').val().trim()) {
-			console.log('getting food');
-			var food_name = $('#searchFood').val();
+        var total = 0;
 
-			this.collection = new FoodCollection({name: food_name});
+        _.each(app.selectedFoods.models, function(item) {
+            total += item.attributes.calories;
+        });
 
-			var self = this;
-			this.collection.fetch({
-				success: function() {
-					self.render();
-				}
-			});
-		// };
+        $('#total-calories span').text(total);
 
+        return this;
+    },
 
-	},
+    render: function() {
 
-	// template: _.template($('#foodTemplate').html()),
-	// template: '<ul id="food-list"></ul>',
+        var listView;
 
-	renderCalories: function() {
-		console.log('updating calories');
-		var total = 0;
+        for (var x in this.collection.models) {
+            listView = new app.FoodListView({
+                model: this.collection.models[x]
+            });
 
-
-		_.each(app.selectedFoods.models, function (item) {
-			total += item.attributes.calories;
-		});
-
-		$('#total-calories span').text(total);
-
-		return this;
-	},
-
-	render: function() {
-
-		console.log(this.collection.models);
-
-		var listView;
-
-		for (var x in this.collection.models) {
-			listView = new app.FoodListView({model: this.collection.models[x]});
-
-			this.$el.find('#food-list').append(listView.render().el);
-		}
-		//$('#foodContainer').html(this.template({ food: this.collection.toJSON() }));
-	}
+            this.$el.find('#food-list').append(listView.render().el);
+        }
+    }
 });
 
-// var foodApp = new app.FoodListView ({
-// 	el: $('#searchContainer')
-// });
-
-var ENTER_KEY = 13;
 var foodApp = new app.FoodAppView();
