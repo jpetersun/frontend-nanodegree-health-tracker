@@ -5,13 +5,13 @@ app.FoodAppView = Backbone.View.extend({
     el: '#search-container',
 
     events: {
+
         'click #search-button': 'getFood'
     },
 
     initialize: function() {
 
         this.listenTo(app.selectedFoods, 'add remove', this.renderCalories);
-        console.log('running app initialize');
     },
 
     getFood: function(e) {
@@ -19,7 +19,7 @@ app.FoodAppView = Backbone.View.extend({
         $("#food-list").html('');
 
         _.bindAll(this, 'render');
-        console.log('getting food');
+
         var food_name = $('#searchFood').val();
 
         this.collection = new FoodCollection({
@@ -27,6 +27,7 @@ app.FoodAppView = Backbone.View.extend({
         });
 
         var self = this;
+
         this.collection.fetch({
             success: function() {
                 self.render();
