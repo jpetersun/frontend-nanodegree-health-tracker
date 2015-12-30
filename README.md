@@ -7,7 +7,7 @@ Search for food and count the total amount of calories consumed. Selected
 items will be stored in a Firebase database for access at a later time.
 
 ###How to Run the Application
-1. 'bower install' for bootstrap dependency
+1. If downloaded, 'bower install', for bootstrap dependency
 2. Type in the search field for food and click on 'Search' button
 3. Click on listed food items to select them
 4. Items are added to a consumed item list
