@@ -37,10 +37,12 @@ app.FoodAppView = Backbone.View.extend({
         var self = this;
 
         // Make request to Nutritionix API and render on sucess.
-        // TODO: on error
         this.collection.fetch({
             success: function() {
                 self.render();
+            },
+            error: function() {
+            	$('#food-list').append('<h2>Could not retrieve food search...</h2>');
             }
         });
     },
