@@ -4,55 +4,65 @@
 		<meta charset="utf-8">
 		<title>Calorie Tracker</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<!-- Google Font - Open Sans -->
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<!-- Main css file -->
 		<link rel="stylesheet" href='css/main.css'>
-
 	</head>
 	<body>
+		<!-- Wrap content in Bootstrap container -->
 		<div class="container" id="search-container">
-<!-- 				<img class="img-responsive" src="image_src/cook-366875_1280.jpg">
- -->			<div class="user-input">
-					<h1>Calorie Tracker</h1>
-					<input id="searchFood" type="text" autocomplete="off" placeholder="What did you eat?">
-					<button id="search-button">Search</button>
-				</div>
-				<img src="/image_src/ajax-loader.gif" id="loading-icon" style="display:none">
-				<ul id="food-list"></ul>
-				<hr>
-				<h4>Consumed:</h4>
-				<ul id="total-list"></ul>
-				<hr class="total-list-hr">
-
-				<nav class="navbar text-center navbar-default navbar-fixed-bottom">
-					<p id="total-calories">Total Calories: <span>0</span></p>
-				</nav>
-
-
+			<div class="user-input">
+				<h1>Calorie Tracker</h1>
+				<!-- Search input -->
+				<input id="searchFood" type="text" autocomplete="off" placeholder="What did you eat?">
+				<!-- Button to fire AJAX request to Nutritionix API -->
+				<button id="search-button">Search</button>
+			</div>
+			<!-- Loading indicator for AJAX request -->
+			<img src="/image_src/ajax-loader.gif" id="loading-icon" style="display:none">
+			<!-- List of 10 results from Nutritionix API request -->
+			<ul id="food-list"></ul>
+			<hr>
+			<h4>Consumed:</h4>
+			<!-- Selected food items from search results -->
+			<ul id="total-list"></ul>
+			<hr class="total-list-hr">
+			<nav class="navbar text-center navbar-default navbar-fixed-bottom">
+				<!-- Total amount of calories when adding all items from selected list -->
+				<p id="total-calories">Total Calories: <span>0</span></p>
+			</nav>
 		</div>
-		<div id="foodContainer"></div>
 
-			<!--<script type="text/template" id="foodTemplate">
-			<% _.each(food, function (item) { %>
-						<li><%= item.fields.item_name %> | calories: <%= item.fields.nf_calories %></li>
-				<% }); %>
-			</script>-->
-
+		<!-- Underscore.js -->
 		<script src="js/lib/underscore-min.js"></script>
+		<!-- jQuery -->
 		<script src="js/lib/jquery-1.11.3.min.js"></script>
+		<!-- Backbone.js -->
 		<script src="js/lib/backbone-min.js"></script>
+		<!-- Livereload for editing: npm install grunt-contrib-watch, 'grunt watch' in project file, save and page refreshes -->
 		<script src="http://localhost:9090/livereload.js"></script>
 		<!-- Firebase -->
 		<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
 		<!-- BackboneFire -->
 		<script src="https://cdn.firebase.com/libs/backbonefire/0.5.1/backbonefire.min.js"></script>
+		<!-- Models for food items -->
 		<script src="js/models/food-model.js"></script>
+		<!-- Collection for AJAX request, and Firebase collection -->
 		<script src="js/collections/food-collection.js"></script>
+		<!-- Main view for application -->
 		<script src="js/views/food-app-view.js"></script>
+		<!-- Search results view from AJAX request -->
 		<script src="js/views/food-list-view.js"></script>
+		<!-- Total view for selected items -->
 		<script src="js/views/food-total-view.js"></script>
+		<!-- Selected food items view -->
 		<script src="js/views/food-selected-item-view.js"></script>
+		<!-- Router for application -->
 		<script src="js/routers/food-router.js"></script>
+		<!-- Show loading icon when AJAX request is sent, hide when complete -->
 		<script>
 		$(document).ajaxSend(function(event, request, settings) {
 			$('#loading-icon').show();
