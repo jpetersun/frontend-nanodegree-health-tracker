@@ -9,6 +9,9 @@ app.FoodSelectedItemView = Backbone.View.extend({
 	// Give each listed item a class name of 'selected-item'.
 	className: 'selected-item',
 
+	// Template
+	template: _.template($('#selected-item-template').html()),
+
 	// Listen for click events on each model.
 	events: {
 
@@ -26,7 +29,8 @@ app.FoodSelectedItemView = Backbone.View.extend({
 	// Render each model with it's title and calorie amount attributes.
 	render: function() {
 
-		this.$el.html("<strong>" + this.model.attributes.title + "</strong>" + " | calories: " + this.model.attributes.calories);
+		// Render model with Underscore template
+		this.$el.html(this.template(this.model.toJSON()));
 
 		return this;
 	},
