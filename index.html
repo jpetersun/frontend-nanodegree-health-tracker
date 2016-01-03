@@ -34,6 +34,14 @@
 				<!-- Total amount of calories when adding all items from selected list -->
 				<p id="total-calories">Total Calories: <span>0</span></p>
 			</nav>
+			<!-- Underscore Template for search results -->
+			<script type="text/template" id="item-template">
+				<label><%- fields.item_name + ' | calories: ' + fields.nf_calories %></label>
+			</script>
+			<!-- Underscore Template for selected food items -->
+			<script type="text/template" id="selected-item-template">
+				<label><%- title + ' | calories: ' + calories %></label>
+			</script>
 		</div>
 
 		<!-- Underscore.js -->
