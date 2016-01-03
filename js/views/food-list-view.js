@@ -9,6 +9,9 @@ app.FoodListView = Backbone.View.extend({
 	// Give each listed item the class name of 'search-results'.
 	className: 'search-results',
 
+	// Template
+	template: _.template($('#item-template').html()),
+
 	// Listen for click events on each model.
 	events: {
 
@@ -42,7 +45,8 @@ app.FoodListView = Backbone.View.extend({
 	// Render each model in the unordered list with title and calorie amount.
 	render: function() {
 
-		this.$el.html("<strong>" + this.model.attributes.fields.item_name + "</strong>" + " | calories: " + this.model.attributes.fields.nf_calories);
+		// Render model with Underscore template
+		this.$el.html(this.template(this.model.toJSON()));
 
 		return this;
 	}
