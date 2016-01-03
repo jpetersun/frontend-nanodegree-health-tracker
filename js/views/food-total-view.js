@@ -26,9 +26,8 @@ app.FoodTotalView = Backbone.View.extend({
 		var selectedFoodItems;
 
 		// Loop through Firebase collection and create a view for each model.
-		for (var x in this.collection.models) {
-
-			selectedFoodItems = new app.FoodSelectedItemView({model: this.collection.models[x]});
+		for (var i = 0; i < this.collection.models.length; i++) {
+			selectedFoodItems = new app.FoodSelectedItemView({model: this.collection.models[i]});
 
 			// Append each model to the view and render them.
 			$('#total-list').append(selectedFoodItems.render().el);
