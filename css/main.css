@@ -33,7 +33,7 @@ ul {
 }
 
 #total-list li {
-	list-style-image: url('..//icons/minus87.png');
+	list-style-image: url('../icons/minus87.png');
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
