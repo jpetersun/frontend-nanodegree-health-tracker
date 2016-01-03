@@ -70,10 +70,8 @@ app.FoodAppView = Backbone.View.extend({
         var listView;
 
         // Loop through collection and create a new view for each model.
-        for (var x in this.collection.models) {
-            listView = new app.FoodListView({
-                model: this.collection.models[x]
-            });
+        for (var i = 0; i < this.collection.models.length; i++) {
+            listView = new app.FoodListView({ model: this.collection.models[i]});
 
             // Append each model to unordered food-list and render them.
             this.$el.find('#food-list').append(listView.render().el);
