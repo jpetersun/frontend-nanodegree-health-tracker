@@ -25,8 +25,8 @@ app.FoodAppView = Backbone.View.extend({
         $("#food-list").html('');
 
         // Take value of input field and store it as variable
-        var food_name = $('#searchFood').val();
-        $('#searchFood').val('');
+        var food_name = $('#search-food').val();
+        $('#search-food').val('');
 
         // Create new collection which has a URL for AJAX request.
         // Use value of input field for searching API
