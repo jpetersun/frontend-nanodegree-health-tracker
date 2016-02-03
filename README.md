@@ -14,7 +14,5 @@ items will be stored in a Firebase database for access at a later time.
 5. Total amount of calories consumed is calculated at the bottom of the screen
 6. To delete items click on them from inside the consumed list.
 
-or
-
-TODO: Run a live demo of the application from here http://jpetersun.github.io/frontend-nanodegree-health-tracker/
+Run a live demo of the application from here http://jpetersun.github.io/frontend-nanodegree-health-tracker/
 
